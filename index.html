@@ -387,6 +387,13 @@ hr.div{border:none;border-top:1px solid var(--border);}
   </div>
 </div>
 
+<!-- VISIT COUNTER -->
+<div style="background:#000;border-top:1px solid rgba(255,255,255,.06);padding:14px 40px;text-align:center;">
+  <p style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.08em;">
+    This page has been visited <span id="visit-count" style="color:rgba(76,175,80,.7);font-weight:500;">—</span> times
+  </p>
+</div>
+
 <!-- DISCLOSURES -->
 <div class="disc">
   <p><strong style="color:rgba(255,255,255,.42);">Important Notices:</strong> Investing in early-stage public companies is speculative and involves significant risks, including illiquidity and loss of principal. Past performance is not indicative of future results. Unless clearly stated, nothing herein shall be construed to be an offer to sell, nor a solicitation of an offer to buy, any financial product. Securities trading, account management, and investment banking services are offered by MDB Capital, a registered broker-dealer and member of FINRA and SIPC.</p>
@@ -404,6 +411,28 @@ function toggleFaq(btn){
   document.querySelectorAll('.fi.open').forEach(i=>i.classList.remove('open'));
   if(!isOpen)item.classList.add('open');
 }
+
+// Visit counter via JSONbin
+(async function(){
+  const BIN='69cdc9a3856a682189efde4f';
+  const KEY='$2a$10$RXXi80xc0KerSeN6he/0sehebHqElKb.3nx2TuHb5VVKR80gG31qu';
+  const BASE='https://api.jsonbin.io/v3/b/'+BIN;
+  const el=document.getElementById('visit-count');
+  try {
+    const r = await fetch(BASE+'/latest',{headers:{'X-Master-Key':KEY}});
+    const d = await r.json();
+    const current = d.record?.visits || 0;
+    const next = current + 1;
+    await fetch(BASE,{
+      method:'PUT',
+      headers:{'Content-Type':'application/json','X-Master-Key':KEY},
+      body:JSON.stringify({visits:next})
+    });
+    el.textContent = next.toLocaleString();
+  } catch(e){
+    el.textContent='—';
+  }
+})();
 </script>
 </body>
 </html>
