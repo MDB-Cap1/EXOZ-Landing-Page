@@ -36,7 +36,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--mdb-blue);b
 .nav-cta-blue:hover{background:rgba(255,255,255,.25)!important;}
 
 /* HERO */
-.hero{min-height:100vh;padding:120px 40px 16px;display:flex;align-items:flex-start;background:#fff;position:relative;overflow:hidden;}
+.hero{min-height:100vh;padding:120px 40px 100px;display:flex;align-items:flex-start;background:#fff;position:relative;overflow:hidden;}
 .hero-grid{display:none;}
 .hero-glow{display:none;}
 .hero-inner{position:relative;z-index:1;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start;}
@@ -273,25 +273,27 @@ hr.div{border:none;border-top:1px solid var(--border);}
 
     </div>
   </div>
-</section>
 
-<!-- HIGHLIGHTS STRIP -->
-<div class="hl-strip" style="margin-top:16px;">
-  <div class="hl-inner" style="grid-template-columns:repeat(3,1fr);">
-    <div class="hl" style="text-align:center;padding:0 24px;border-right:1px solid var(--border-dark);">
-      <div class="hl-val">$15M</div>
-      <div class="hl-lbl">Public Offering</div>
-    </div>
-    <div class="hl" style="text-align:center;padding:0 24px;border-right:1px solid var(--border-dark);">
-      <div class="hl-val">100× Scale-up</div>
-      <div class="hl-lbl">99.6% purity @ 100× scale &amp; 3rd-party validated in ~ 1 year</div>
-    </div>
-    <div class="hl" style="text-align:center;padding:0 24px;">
-      <div class="hl-val">6× Production Cycle</div>
-      <div class="hl-lbl">Faster than conventional manufacturing approaches</div>
+  <!-- HIGHLIGHTS STRIP — full width, inside hero section -->
+  <div style="position:absolute;bottom:0;left:0;right:0;">
+    <div class="hl-strip" style="margin-top:0;">
+      <div class="hl-inner" style="grid-template-columns:repeat(3,1fr);">
+        <div class="hl" style="text-align:center;padding:0 24px;border-right:1px solid var(--border-dark);">
+          <div class="hl-val">$15M</div>
+          <div class="hl-lbl">Public Offering</div>
+        </div>
+        <div class="hl" style="text-align:center;padding:0 24px;border-right:1px solid var(--border-dark);">
+          <div class="hl-val">100× Scale-up</div>
+          <div class="hl-lbl">99.6% purity @ 100× scale &amp; 3rd-party validated in ~ 1 year</div>
+        </div>
+        <div class="hl" style="text-align:center;padding:0 24px;">
+          <div class="hl-val">6× Production Cycle</div>
+          <div class="hl-lbl">Faster than conventional manufacturing approaches</div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- RESOURCES -->
 <div id="resources">
