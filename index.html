@@ -36,7 +36,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--mdb-blue);b
 .nav-cta-blue:hover{background:rgba(255,255,255,.25)!important;}
 
 /* HERO */
-.hero{min-height:100vh;padding:120px 40px 60px;display:flex;align-items:flex-start;background:#fff;position:relative;overflow:hidden;}
+.hero{min-height:100vh;padding:120px 40px 32px;display:flex;align-items:flex-start;background:#fff;position:relative;overflow:hidden;}
 .hero-grid{display:none;}
 .hero-glow{display:none;}
 .hero-inner{position:relative;z-index:1;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start;}
@@ -91,7 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--mdb-blue);b
 .z-btn:hover{background:var(--mint-dark);}
 
 /* HIGHLIGHTS */
-.hl-strip{background:#f7f9fc;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 40px;}
+.hl-strip{background:#f7f9fc;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 40px;}
 .hl-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
 .hl{padding:0 24px;border-right:1px solid var(--border-dark);text-align:center;}
 .hl:first-child{padding-left:0;text-align:left;}
@@ -211,13 +211,15 @@ hr.div{border:none;border-top:1px solid var(--border);}
     <div>
       <div class="hero-eyebrow">
         <img src="https://exozymes.com/hubfs/eXoZymes-logo.svg" alt="eXoZymes" class="hero-exoz-logo" style="height:60px;"/>
+        <div class="hero-exoz-divider"></div>
+        <span class="hero-ticker-badge">NASDAQ: EXOZ</span>
       </div>
       <h1>AI-Enhanced<br/>Biomanufacturing<br/>at <em>Commercial Scale</em></h1>
       <p class="hero-desc">eXoZymes is redefining how complex molecules are manufactured — using AI-engineered, cell-free enzyme platforms to unlock pharmaceutical and nutraceutical markets. The company has completed a 100× NCT pilot production run with commercially relevant results.</p>
       <div class="hero-ctas">
         <a href="#resources" class="btn" style="background:#66A8CC;color:#fff;">Investor Resources →</a>
         <a href="#ioi" class="btn" style="background:#66A8CC;color:#fff;">Participation →</a>
-        <a href="https://www.mdb.com/mdb-direct/open-an-account/" target="_blank" class="btn btn-b">Open MDB Direct Account</a>
+        <a href="https://www.mdb.com/mdb-direct/open-an-account/" target="_blank" class="btn" style="background:#66A8CC;color:#fff;">Open MDB Direct Account</a>
       </div>
     </div>
 
@@ -273,11 +275,19 @@ hr.div{border:none;border-top:1px solid var(--border);}
 
 <!-- HIGHLIGHTS STRIP -->
 <div class="hl-strip">
-  <div class="hl-inner">
-    <div class="hl"><div class="hl-val">$20M</div><div class="hl-lbl">Equity Raise Target</div></div>
-    <div class="hl"><div class="hl-val">100×</div><div class="hl-lbl">NCT Pilot Scale-Up Completed</div></div>
-    <div class="hl"><div class="hl-val">Phase 1b</div><div class="hl-lbl">Value Inflection Point</div></div>
-    <div class="hl"><div class="hl-val">EXOZ</div><div class="hl-lbl">NASDAQ · Accredited Only</div></div>
+  <div class="hl-inner" style="grid-template-columns:repeat(3,1fr);">
+    <div class="hl" style="text-align:center;padding:0 24px;border-right:1px solid var(--border-dark);">
+      <div class="hl-val">$15M</div>
+      <div class="hl-lbl">Public Offering</div>
+    </div>
+    <div class="hl" style="text-align:center;padding:0 24px;border-right:1px solid var(--border-dark);">
+      <div class="hl-val">100× Scale-up</div>
+      <div class="hl-lbl">99.6% purity @ 100× scale &amp; 3rd-party validated in ~ 1 year</div>
+    </div>
+    <div class="hl" style="text-align:center;padding:0 24px;">
+      <div class="hl-val">6× Production Cycle</div>
+      <div class="hl-lbl">Faster than conventional manufacturing approaches</div>
+    </div>
   </div>
 </div>
 
