@@ -466,26 +466,38 @@ hr.div{border:none;border-top:1px solid var(--border);}
   <p>We have provided investment banking services to eXoZymes, Inc. (NASDAQ: EXOZ). Our parent company, MDB Capital Holdings, LLC (Nasdaq: MDBH), its affiliates, and our financial professionals may have a financial interest in the equity securities of eXoZymes, Inc. and may be buying or selling shares of this company at any time.</p>
   <p>Securities investing involves significant risks, including loss of principal. Customers should read the relevant risk factors before investing. MDB Capital does not make any representations or warranties concerning the past or future performance of any financial instrument. Any trading symbols are for illustrative purposes only and are not intended to portray recommendations. Unless clearly stated, nothing herein shall be construed to be an offer to sell, nor a solicitation of an offer to buy, any financial product.</p>
   <p>Please view the MDB Capital Customer Relationship Summary (<a href="https://www.mdb.com/disclosures/customer-relationship-summary/" target="_blank">Form CRS</a>) and other important disclosure information at <a href="https://www.mdb.com/disclosures" target="_blank">www.mdb.com/disclosures</a>. PatentVest, Inc. is a wholly owned subsidiary of MDB Capital Holdings and an affiliated company of MDB Capital.</p>
-  <p>This message is provided for information purposes only. The views and opinions expressed herein are solely those of
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <p>This message is provided for information purposes only. The views and opinions expressed herein are solely those of the authors and do not necessarily reflect the views of MDB Capital, its affiliates, or its employees.</p>
+  <p style="margin-top:9px;">© 2026 MDB Capital. All Rights Reserved. · 14135 Midway Road, Suite G-150, Addison, TX 75001 · (945) 262-9010</p>
+</div>
+
+<script>
 function toggleFaq(btn){
-  const item = btn.closest('.fi');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.fi.open').forEach(i => i.classList.remove('open'));
+  var item = btn.closest('.fi');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.fi.open').forEach(function(i){ i.classList.remove('open'); });
   if (!isOpen) item.classList.add('open');
 }
 
-// Visit counter via JSONbin
 (async function(){
-  const BIN = '69cdc9a3856a682189efde4f';
-  const KEY = '$2a$10$RXXi80xc0KerSeN6he/0sehebHqElKb.3nx2TuHb5VVKR80gG31qu';
-  const BASE = 'https://api.jsonbin.io/v3/b/' + BIN;
-  const el = document.getElementById('visit-count');
+  var BIN = '69cdc9a3856a682189efde4f';
+  var KEY = '$2a$10$RXXi80xc0KerSeN6he/0sehebHqElKb.3nx2TuHb5VVKR80gG31qu';
+  var BASE = 'https://api.jsonbin.io/v3/b/' + BIN;
+  var el = document.getElementById('visit-count');
   try {
-    const r = await fetch(BASE + '/latest', {headers: {'X-Master-Key': KEY}});
-    const d = await r.json();
-    const current = d.record?.visits || 0;
-    const next = current + 1;
+    var r = await fetch(BASE + '/latest', {headers: {'X-Master-Key': KEY}});
+    var d = await r.json();
+    var current = (d.record && d.record.visits) ? d.record.visits : 0;
+    var next = current + 1;
     await fetch(BASE, {
       method: 'PUT',
-      he
+      headers: {'Content-Type': 'application/json', 'X-Master-Key': KEY},
+      body: JSON.stringify({visits: next})
+    });
+    el.textContent = next.toLocaleString();
+  } catch(e) {
+    el.textContent = '—';
+  }
+})();
+</script>
+</body>
+</html>
